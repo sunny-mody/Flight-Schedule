@@ -34,10 +34,10 @@ class Filters extends Component {
       default:
         break;
     }
-  }
+  };
 
   handleBlur = e => {
-    switch (e.target.id) {      
+    switch (e.target.id) {
       case "passengerCount":
         this.setState({
           passengerCount: e.target.value
@@ -58,14 +58,13 @@ class Filters extends Component {
     }
   };
 
-  handleSubmit = e => {    
+  handleSubmit = e => {
     e.preventDefault();
 
     this.setState({ formFilled: true }, () => {
       let dataInFilters = this.state;
       this.props.callbackFromParent(dataInFilters);
     });
-
   };
 
   priceChange = e => {
@@ -96,9 +95,7 @@ class Filters extends Component {
   render() {
     return (
       <aside className="search-filters-container">
-
         <section>
-
           <ul className="flight-type-tabs">
             <li onClick={this.selectTab} id="oneWayTab" className="active">
               One Way
@@ -112,34 +109,34 @@ class Filters extends Component {
             <div>
               <label htmlFor="originCity">Origin</label>
 
-              <select onChange={this.selectCity} name="originCity" id="originCity" required>
-                <option defaultValue value="">Origin</option>
+              <select
+                onChange={this.selectCity}
+                name="originCity"
+                id="originCity"
+                required
+              >
+                <option defaultValue value="">
+                  Origin
+                </option>
                 <option value="Pune">Pune</option>
               </select>
-
-              {/* <input
-                onBlur={this.handleBlur}
-                type="text"
-                id="originCity"
-                placeholder="Origin City"
-                required
-              /> */}
             </div>
 
             <div>
               <label htmlFor="destinationCity">Destination</label>
-              <select onChange={this.selectCity} name="destinationCity" id="destinationCity" required>
-                <option defaultValue value="">Destination</option>
-                <option defaultValue value="Delhi">Delhi</option>
-              </select>
-
-              {/* <input
-                onBlur={this.handleBlur}
-                type="text"
+              <select
+                onChange={this.selectCity}
+                name="destinationCity"
                 id="destinationCity"
-                placeholder="Destination City"
                 required
-              /> */}
+              >
+                <option defaultValue value="">
+                  Destination
+                </option>
+                <option defaultValue value="Delhi">
+                  Delhi
+                </option>
+              </select>
             </div>
 
             <div>
@@ -181,11 +178,7 @@ class Filters extends Component {
               <React.Fragment />
             )}
 
-            <input
-              
-              type="submit"
-              defaultValue="Search"
-            />
+            <input type="submit" defaultValue="Search" />
           </form>
 
           <div className="price-filter-wrapper">
@@ -209,10 +202,8 @@ class Filters extends Component {
               </strong>
               <span className="max">20000</span>
             </div>
-        </div>
-      
+          </div>
         </section>
-      
       </aside>
     );
   }

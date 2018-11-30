@@ -2,13 +2,15 @@
 main {
   background: #f5f5f5;
 }
+
 .search-results-container {
-  min-height: calc(100vh - 150px); 
+  min-height: calc(100vh - 150px);
 }
 
+/* search title */
 .fs-result-header {
   display: flex;
-  align-items: center; 
+  align-items: center;
   padding: 20px 25px 20px 20px;
 }
 .fs-result-header > div:first-child {
@@ -18,31 +20,28 @@ main {
 .fs-result-header > div:last-child > div {
   font-size: 16px;
 }
-
 .fs-result-header > div:first-of-type {
-  flex: 1; 
+  flex: 1;
 }
 
-.fs-result {  
+/* search results */
+.fs-result {
   margin: 0 20px 25px;
   padding: 20px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   background: #ffffff;
-  -webkit-box-shadow: 2px 3px 10px 0px rgba(204,204,204,1);
-  -moz-box-shadow: 2px 3px 10px 0px rgba(204,204,204,1);
-  box-shadow: 2px 3px 10px 0px rgba(204,204,204,1);
+  -webkit-box-shadow: 2px 3px 10px 0px rgba(204, 204, 204, 1);
+  -moz-box-shadow: 2px 3px 10px 0px rgba(204, 204, 204, 1);
+  box-shadow: 2px 3px 10px 0px rgba(204, 204, 204, 1);
 }
-
 .fs-result .fs-result-left-wrapper {
-  flex-basis: 75%; 
+  flex-basis: 75%;
 }
-
 .fs-result .fs-result-right-wrapper {
   flex-basis: 25%;
-  text-align: center; 
+  text-align: center;
 }
-
 .fs-result .fs-amount {
   font-size: 24px;
   font-weight: 700;
@@ -54,15 +53,14 @@ main {
   font-style: italic;
 }
 .fs-result .fs-details {
-  display: flex; 
+  display: flex;
 }
 .fs-result .fs-details > div > div:not(:last-child) {
   margin-bottom: 10px;
 }
 .fs-result .fs-details > div:first-of-type {
-  margin-right: 25px; 
+  margin-right: 25px;
 }
-
 .fs-book {
   border: 1px solid #2e9cca;
   padding: 10px 25px;
@@ -75,7 +73,7 @@ main {
   color: #ffffff;
 }
 
-
+/* when search is empty */
 .search-empty {
   text-align: center;
 }
@@ -89,18 +87,15 @@ main {
   margin: 20px 10px;
 }
 
-
-/* dekstop */
+/* dekstop only */
 @media all and (min-width: 992px) {
   .fs-result-header > div:last-child > div:first-child {
     margin-bottom: 10px;
   }
 }
 
-
-/* tablet */
+/* tablet only */
 @media all and (min-width: 768px) and (max-width: 991px) {
- 
 }
 
 /* mobile & tablet */
@@ -119,7 +114,7 @@ main {
   }
 }
 
-/* mobile */
+/* mobile only */
 @media all and (max-width: 767px) {
   main {
     grid-column: 1/3;

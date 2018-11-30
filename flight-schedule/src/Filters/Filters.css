@@ -11,6 +11,8 @@ aside {
   -moz-box-shadow: 2px 2px 4px #cccccc;
   box-shadow: 2px 2px 4px #cccccc;
 }
+
+/* tabs */
 .flight-type-tabs {
   list-style: none;
   margin: -20px -20px 20px;
@@ -18,41 +20,38 @@ aside {
   display: flex;
   background: #fff;
 }
-
 .flight-type-tabs > li {
   flex: 1;
   background: #e4e4e4;
   padding: 10px;
-  text-align: center;      
+  text-align: center;
   font-weight: 600;
-  font-size: 18px;  
+  font-size: 18px;
 }
-
 .flight-type-tabs > li:first-of-type {
-  -webkit-box-shadow: inset -7px -7px 20px -13px rgba(0,0,0,0.75);
-  -moz-box-shadow: inset -7px -7px 20px -13px rgba(0,0,0,0.75);
-  box-shadow: inset -7px -7px 20px -13px rgba(0,0,0,0.75);
+  -webkit-box-shadow: inset -7px -7px 20px -13px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset -7px -7px 20px -13px rgba(0, 0, 0, 0.75);
+  box-shadow: inset -7px -7px 20px -13px rgba(0, 0, 0, 0.75);
 }
 .flight-type-tabs > li:last-of-type {
-  -webkit-box-shadow: inset 5px -7px 20px -13px rgba(0,0,0,0.75);
-    -moz-box-shadow: inset 5px -7px 20px -13px rgba(0,0,0,0.75);
-    box-shadow: inset 5px -7px 20px -13px rgba(0,0,0,0.75);
-  }
-
+  -webkit-box-shadow: inset 5px -7px 20px -13px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 5px -7px 20px -13px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 5px -7px 20px -13px rgba(0, 0, 0, 0.75);
+}
 .flight-type-tabs > li.active {
   background: #ffffff;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  
 }
 
+
+/* search form */
 .search-form > div {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
 }
-
 .search-form > div > input,
 .search-form > div > select {
   width: calc(100% - 140px);
@@ -62,18 +61,16 @@ aside {
 
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
-  box-sizing: content-box; 
+  box-sizing: content-box;
 
   -webkit-box-shadow: inset 1px 1px 5px 1px #cccccc;
   -moz-box-shadow: inset 1px 1px 5px 1px #cccccc;
   box-shadow: 1px 1px 5px 1px #cccccc;
 }
-
 .search-form > div > label {
   width: 120px;
   padding: 10px 0;
 }
-
 .search-form input[type="submit"] {
   border: 1px solid #2e9cca;
   padding: 10px;
@@ -86,22 +83,23 @@ aside {
   color: #ffffff;
 }
 
+
+/* price filter */
 .price-filter-wrapper {
   border-top: 1px solid #ccc;
   padding-top: 20px;
 }
-
 #priceFilter {
   width: 100%;
   margin-top: 10px;
 }
-
 .price-filter-amount {
   display: flex;
   justify-content: space-between;
 }
 
-/* mobile */
+
+/* mobile only */
 @media all and (max-width: 767px) {
   aside {
     grid-column: 1/3;

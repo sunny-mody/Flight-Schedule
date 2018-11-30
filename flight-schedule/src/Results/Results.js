@@ -31,6 +31,7 @@ class Results extends Component {
 
     return (
       <main className="search-results-container">
+        {/* load search title */}
         {dataFromFilters.formFilled ? (
           <div className="fs-result-header">
             <div>
@@ -46,7 +47,8 @@ class Results extends Component {
               </div>
               {!dataFromFilters.oneWay ? (
                 <div>
-                  <FontAwesomeIcon icon="calendar-alt" /> Return : {dataFromFilters.returnDate}
+                  <FontAwesomeIcon icon="calendar-alt" /> Return :{" "}
+                  {dataFromFilters.returnDate}
                 </div>
               ) : (
                 ""
@@ -61,6 +63,7 @@ class Results extends Component {
           </div>
         )}
 
+        {/* load search results */}
         <div className="fs-result-body">
           {flightOneWayData.map((flightT, i) =>
             dataFromFilters.oneWay ? (
@@ -75,7 +78,6 @@ class Results extends Component {
                       {/* one way details                */}
                       <div className="fs-depart-details">
                         <div>
-                          <img src={"../Assets/" + flightT.provider +  ".png"} />
                           <FontAwesomeIcon icon="plane" /> {flightT.id}
                         </div>
                         <div class="cities">
@@ -94,7 +96,6 @@ class Results extends Component {
                   </div>
 
                   <div className="fs-result-right-wrapper">
-                    <img src="assets/ga.png" alt="" />
                     <button className="fs-book">Book this Flight</button>
                   </div>
                 </div>
@@ -138,19 +139,18 @@ class Results extends Component {
                             {flightR.origin.code} > {flightR.destination.code}
                           </div>
                           <div>
-                            <FontAwesomeIcon icon="plane-departure" /> Depart
-                            : {flightR.origin.schedule.departure_time}
+                            <FontAwesomeIcon icon="plane-departure" /> Depart :{" "}
+                            {flightR.origin.schedule.departure_time}
                           </div>
                           <div>
-                            <FontAwesomeIcon icon="plane-arrival" /> Arrive 
-                            : {flightR.destination.schedule.arrival_time}
+                            <FontAwesomeIcon icon="plane-arrival" /> Arrive :{" "}
+                            {flightR.destination.schedule.arrival_time}
                           </div>
                         </div>
                       </div>
                     </div>
 
                     <div className="fs-result-right-wrapper">
-                      <img src="assets/ga.png" alt="" />
                       <button className="fs-book">Book this Flight</button>
                     </div>
                   </div>
@@ -160,78 +160,6 @@ class Results extends Component {
               )
             )
           )}
-
-          {/* {flightOneWayData.map((flight, i) => (
-
-          flightReturnWayData.map((flightR, j) => (
-            (flight.provider === flightR.provider) && ((flight.price + flightR.price) <= dataFromFilters.priceFilter)
-            ? (
-
-                  flightOneWayData.map((flight, i) => (
-                    <div className="fs-result" key={i}>
-                      <div className="fs-result-left-wrapper">
-                        <div className="fs-amount">
-
-                                              
-                            <span> RS
-                            {!dataFromFilters.oneWay 
-                              ?  ( 
-                                flightReturnWayData.map((flightR, j) => ( 
-                                  flight.provider === flightR.provider
-                                    ? flight.price + flightR.price
-                                    : ''                          
-                                ))
-                              ) : (
-                                flight.price
-                              )
-                            } 
-                            </span>
-                          
-
-                        </div>
-                        <div className="fs-details">
-                                            
-                          <div className="fs-depart-details">
-                            <div>{flight.id}</div>
-                            <div>
-                              {flight.origin.code} > {flight.destination.code}
-                            </div>
-                            <div>Depart : {flight.origin.schedule.departure_time}</div>
-                            <div>
-                              Arrive : {flight.destination.schedule.arrival_time}
-                            </div>
-                          </div>
-                          
-                          {flightReturnWayData.map((flightR, j) => (
-                              <div className="fs-return-details">
-                                {!dataFromFilters.oneWay && (flight.provider === flightR.provider) 
-                                  ?  ( 
-                                    <div>
-                                      <div>{flightR.id}</div>
-                                      <div>{flightR.origin.code} > {flightR.destination.code}</div>
-                                      <div>Depart : {flightR.origin.schedule.departure_time}</div>
-                                      <div>Arrive : {flightR.origin.schedule.arrival_time}</div>
-                                    </div>
-                                  ) : (
-                                    <React.Fragment></React.Fragment>
-                                )}
-                              </div>                     
-                          ))}
-                          
-                        </div>
-                      </div>
-
-                      <div className="fs-result-right-wrapper">
-                        <img src="assets/ga.png" alt="" />
-                        <button className="fs-book">Book this Flight</button>
-                      </div>
-                    </div>
-                  ))
-
-            )
-            : ''
-          ))
-        ))} */}
         </div>
       </main>
     );

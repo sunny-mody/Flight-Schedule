@@ -8,7 +8,7 @@ import Results from "../Results/Results";
 import axios from "axios";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faPlane,
   faPlaneDeparture,
@@ -52,9 +52,6 @@ class App extends Component {
     this.setState({
       dataFromFilters: dataFromFilters
     });
-
-    // let filteredData = this.state.dataFromFilters;
-    // console.log('Price : ' + filteredData.priceFilter);
 
     var oneWayArray = this.state.flightData.filter(function(el) {
       return (
