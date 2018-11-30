@@ -5,6 +5,9 @@
 Checkout the repository from Github
 https://github.com/sunny-mody/Flight-Search-Engine.git
 
+Stable Branch
+https://github.com/sunny-mody/Flight-Search-Engine/tree/stable_version_1.0.0
+
 Change the directory
 cd flight-schedule
 
