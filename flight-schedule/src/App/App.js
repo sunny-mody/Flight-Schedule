@@ -14,7 +14,8 @@ import {
   faPlaneDeparture,
   faPlaneArrival,
   faCalendarAlt,
-  faRupeeSign
+  faRupeeSign,
+  faGlobeAsia
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -22,7 +23,8 @@ library.add(
   faPlaneDeparture,
   faPlaneArrival,
   faCalendarAlt,
-  faRupeeSign
+  faRupeeSign,
+  faGlobeAsia
 );
 
 class App extends Component {

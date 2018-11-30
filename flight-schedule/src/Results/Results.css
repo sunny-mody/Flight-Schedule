@@ -76,6 +76,20 @@ main {
 }
 
 
+.search-empty {
+  text-align: center;
+}
+.search-empty > div:first-child {
+  font-size: 24px;
+  margin: 40px 10px;
+}
+.search-empty > div:last-child {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 10px;
+}
+
+
 /* dekstop */
 @media all and (min-width: 992px) {
   .fs-result-header > div:last-child > div:first-child {

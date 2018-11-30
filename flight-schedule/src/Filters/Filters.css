@@ -6,6 +6,9 @@ aside {
 .search-filters-container > section {
   background: #ffffff;
   padding: 20px;
+
+  -webkit-box-shadow: 2px 2px 4px #cccccc;
+  -moz-box-shadow: 2px 2px 4px #cccccc;
   box-shadow: 2px 2px 4px #cccccc;
 }
 .flight-type-tabs {
@@ -26,7 +29,7 @@ aside {
 }
 
 .flight-type-tabs > li:first-of-type {
--webkit-box-shadow: inset -7px -7px 20px -13px rgba(0,0,0,0.75);
+  -webkit-box-shadow: inset -7px -7px 20px -13px rgba(0,0,0,0.75);
   -moz-box-shadow: inset -7px -7px 20px -13px rgba(0,0,0,0.75);
   box-shadow: inset -7px -7px 20px -13px rgba(0,0,0,0.75);
 }
@@ -38,7 +41,10 @@ aside {
 
 .flight-type-tabs > li.active {
   background: #ffffff;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
+  
 }
 
 .search-form > div {
@@ -47,11 +53,19 @@ aside {
   margin: 20px 0;
 }
 
-.search-form > div > input {
+.search-form > div > input,
+.search-form > div > select {
   width: calc(100% - 140px);
   padding: 10px;
   border-radius: 3px;
   border: 0;
+
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; 
+
+  -webkit-box-shadow: inset 1px 1px 5px 1px #cccccc;
+  -moz-box-shadow: inset 1px 1px 5px 1px #cccccc;
   box-shadow: 1px 1px 5px 1px #cccccc;
 }
 
@@ -60,7 +74,7 @@ aside {
   padding: 10px 0;
 }
 
-.search-form input[type="button"] {
+.search-form input[type="submit"] {
   border: 1px solid #2e9cca;
   padding: 10px;
   border-radius: 40px;
@@ -72,8 +86,14 @@ aside {
   color: #ffffff;
 }
 
+.price-filter-wrapper {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
 #priceFilter {
   width: 100%;
+  margin-top: 10px;
 }
 
 .price-filter-amount {
@@ -85,5 +105,8 @@ aside {
 @media all and (max-width: 767px) {
   aside {
     grid-column: 1/3;
+  }
+  .price-filter-wrapper {
+    text-align: center;
   }
 }

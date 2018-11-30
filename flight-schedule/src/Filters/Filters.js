@@ -18,7 +18,8 @@ class Filters extends Component {
     };
   }
 
-  handleBlur = e => {
+  selectCity = e => {
+    console.log(e.target.value);
     switch (e.target.id) {
       case "originCity":
         this.setState({
@@ -30,6 +31,13 @@ class Filters extends Component {
           destinationCity: e.target.value
         });
         break;
+      default:
+        break;
+    }
+  }
+
+  handleBlur = e => {
+    switch (e.target.id) {      
       case "passengerCount":
         this.setState({
           passengerCount: e.target.value
@@ -50,11 +58,14 @@ class Filters extends Component {
     }
   };
 
-  handleSubmit = e => {
+  handleSubmit = e => {    
+    e.preventDefault();
+
     this.setState({ formFilled: true }, () => {
       let dataInFilters = this.state;
       this.props.callbackFromParent(dataInFilters);
     });
+
   };
 
   priceChange = e => {
@@ -97,27 +108,38 @@ class Filters extends Component {
             </li>
           </ul>
 
-          <form className="search-form">
+          <form className="search-form" onSubmit={this.handleSubmit}>
             <div>
               <label htmlFor="originCity">Origin</label>
-              <input
+
+              <select onChange={this.selectCity} name="originCity" id="originCity" required>
+                <option defaultValue value="">Origin</option>
+                <option value="Pune">Pune</option>
+              </select>
+
+              {/* <input
                 onBlur={this.handleBlur}
                 type="text"
                 id="originCity"
                 placeholder="Origin City"
                 required
-              />
+              /> */}
             </div>
 
             <div>
               <label htmlFor="destinationCity">Destination</label>
-              <input
+              <select onChange={this.selectCity} name="destinationCity" id="destinationCity" required>
+                <option defaultValue value="">Destination</option>
+                <option defaultValue value="Delhi">Delhi</option>
+              </select>
+
+              {/* <input
                 onBlur={this.handleBlur}
                 type="text"
                 id="destinationCity"
                 placeholder="Destination City"
                 required
-              />
+              /> */}
             </div>
 
             <div>
@@ -160,32 +182,33 @@ class Filters extends Component {
             )}
 
             <input
-              onClick={this.handleSubmit}
-              type="button"
+              
+              type="submit"
               defaultValue="Search"
             />
           </form>
 
           <div className="price-filter-wrapper">
-          <input
-            onChange={this.priceChange}
-            type="range"
-            id="priceFilter"
-            name="price"
-            min="0"
-            max="20000"
-            step="100"
-            value={this.state.priceFilter}
-          />
-          <div className="price-filter-amount">
-            <span className="min">0</span>
-            <strong>
-              <span className="selectedPrice">
-                ( {this.state.priceFilter} )
-              </span>
-            </strong>
-            <span className="max">20000</span>
-          </div>
+            <label htmlFor="priceFilter">Refine flight search</label>
+            <input
+              onChange={this.priceChange}
+              type="range"
+              id="priceFilter"
+              name="price"
+              min="0"
+              max="20000"
+              step="100"
+              value={this.state.priceFilter}
+            />
+            <div className="price-filter-amount">
+              <span className="min">0</span>
+              <strong>
+                <span className="selectedPrice">
+                  ( {this.state.priceFilter} )
+                </span>
+              </strong>
+              <span className="max">20000</span>
+            </div>
         </div>
       
         </section>

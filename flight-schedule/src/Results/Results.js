@@ -25,7 +25,6 @@ class Results extends Component {
   };
 
   render() {
-    // let flightData = this.state.flightData;
     let flightOneWayData = this.state.flightOneWayData;
     let flightReturnWayData = this.state.flightReturnWayData;
     let dataFromFilters = this.state.dataFromFilters;
@@ -55,7 +54,11 @@ class Results extends Component {
             </div>
           </div>
         ) : (
-          ""
+          <div className="search-empty">
+            <div>Search & Filter your flights</div>
+            <FontAwesomeIcon icon="globe-asia" size="6x" />
+            <div>Keep Exploring !!!</div>
+          </div>
         )}
 
         <div className="fs-result-body">
@@ -72,6 +75,7 @@ class Results extends Component {
                       {/* one way details                */}
                       <div className="fs-depart-details">
                         <div>
+                          <img src={"../Assets/" + flightT.provider +  ".png"} />
                           <FontAwesomeIcon icon="plane" /> {flightT.id}
                         </div>
                         <div class="cities">
